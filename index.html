@@ -10,6 +10,9 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
         <title>Adil Jaseem</title>
+        <link rel='icon' href="https://jaseem1999.github.io/mathrukam_committee/jaseem.jpg">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -236,12 +239,31 @@
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Send" class="contact__button button">
+                    <form id="submit-form"  action=""  class="contact__form">
+                        <input type="text" placeholder="Name" name="name"  class="contact__input">
+                        <input type="mail" placeholder="Email" name="mail" class="contact__input">  
+                        <textarea  id="" cols="0" rows="10" name="feedBack" class="contact__input"></textarea>
+                        <input type="submit" value="Submit" class="contact__button button">
                     </form>
+                    <script>
+                        $("#submit-form").submit((e) => {
+                            e.preventDefault()
+                            $.ajax({
+                                url: "https://script.google.com/macros/s/AKfycbyH2cg_5wx_RndOOw-Q2tYKotF7q2nG83-sOPbC_n9EIHOuGuE69-jn-MO3DsMPuTTyew/exec",
+                                data: $("#submit-form").serialize(),
+                                method: "post",
+                                success: function (response) {
+                                    alert("Form submitted successfully")
+                                    window.location.reload()
+                                    //window.location.href="https://google.com"
+                                },
+                                error: function (err) {
+                                    alert("Something Error")
+
+                                }
+                            })
+                        })
+                    </script>
                 </div>
             </section>
         </main>
@@ -264,5 +286,6 @@
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
         <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+       
     </body>
 </html>
