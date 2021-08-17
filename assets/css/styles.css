@@ -70,10 +70,21 @@ a{
   text-decoration: none;
 }
 img{
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   display: block;
   border-radius: 50%;
+}
+@media (min-width: 900px) {
+  .img{
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 400px) {
+  .img{
+    max-width: 80%;
+  }
 }
 
 /*===== CLASS CSS ===== */
@@ -222,6 +233,7 @@ img{
 
 /*BUTTONS*/
 .button{
+  z-index: 1;
   display: inline-block;
   background-color: var(--first-color);
   color: #fff;
