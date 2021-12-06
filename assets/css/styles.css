@@ -70,10 +70,9 @@ a{
   text-decoration: none;
 }
 img{
-  max-width: 90%;
-  height: auto;
-  display: block;
-  border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 @media (min-width: 900px) {
   .img{
